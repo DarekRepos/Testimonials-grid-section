@@ -43,7 +43,7 @@ mobile view
 
 ### Links
 
-- Solution URL: [Solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution URL here](https://www.frontendmentor.io/solutions/testimonials-grid-section-with-astro-MlGkDR-haD)
 - Live Site URL: [Live site URL here](https:/DarekRepos.github.io/Testimonials-grid-section/)
 
 ## My process
