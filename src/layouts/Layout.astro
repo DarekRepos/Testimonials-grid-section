@@ -5,6 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
+import Footer from "../components/Footer.astro";
 import "../styles/style.scss";
 ---
 
@@ -21,22 +22,27 @@ import "../styles/style.scss";
 	</head>
 	<body>
 		<slot />
-	</body><style is:global lang="scss">
-	@use "../styles/style";
-		html {
-			background-color: var(--c-neutral-light-grayish-blue);
-			font-family: "Barlow Semi Condensed", sans-serif;
-		}
-		code {
-			font-family:
-				Menlo,
-				Monaco,
-				Lucida Console,
-				Liberation Mono,
-				DejaVu Sans Mono,
-				Bitstream Vera Sans Mono,
-				Courier New,
-				monospace;
-		}
-	</style>
+		<Footer
+			repohref="https://github.com/DarekRepos/Testimonials-grid-section"
+			challengehref="https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7"
+		/>
+		<style is:global lang="scss">
+			@use "../styles/style";
+			html {
+				background-color: var(--c-neutral-light-grayish-blue);
+				font-family: "Barlow Semi Condensed", sans-serif;
+			}
+			code {
+				font-family:
+					Menlo,
+					Monaco,
+					Lucida Console,
+					Liberation Mono,
+					DejaVu Sans Mono,
+					Bitstream Vera Sans Mono,
+					Courier New,
+					monospace;
+			}
+		</style>
+	</body>
 </html>

@@ -1,0 +1,57 @@
+---
+interface Props {
+    challengehref: string;
+    repohref: string;
+}
+
+const { challengehref, repohref } = Astro.props;
+---
+
+<footer class="attribution" >
+    <p>
+        Challenge by
+        <a
+            class="attribution__link"
+            href={challengehref}
+            target="_blank"
+            rel="noopener noreferrer">Frontend Mentor</a
+        >.
+    </p>
+    <p>
+        Coded by <a
+            class="attribution__link"
+            href={repohref}
+            target="_blank"
+            rel="noopener noreferrer">DarekRepos</a
+        >.
+    </p>
+
+    <style lang="scss">
+        @use "../styles/utils" as u;
+        @use "../styles/mixin" as r;
+
+        .attribution {
+            width: 100%;
+            inline-size: 100%;
+            block-size: 4em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: var(--f-body);
+            text-align: center;
+            padding-block: 1em 1em;
+            margin-block-start: 1.5rem;
+
+            &__link {
+                color: var(--c-primary-very-dark-blackish-blue);
+                text-decoration: none;
+                font-weight: bold;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    </style>
+</footer>
