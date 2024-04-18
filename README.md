@@ -34,11 +34,11 @@ desktop view
 
 tablet view
 
-<img alt="mobile view screenshot" src="./docs/screenshots/screenshot-tablet.png" width="300" height="600">
+<img alt="tablet view screenshot" src="./docs/screenshots/screenshot-tablet.png" width="400" height="532">
 
 mobile view
 
-<img alt="mobile view screenshot" src="./docs/screenshots/screenshot-mobile.png" width="300" height="600">
+<img alt="mobile view screenshot" src="./docs/screenshots/screenshot-mobile.png" width="150" height="350">
 
 
 ### Links
