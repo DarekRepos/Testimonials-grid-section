@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+
+const items = await getCollection("testimonials");
+
+import Layout from "../layouts/Layout.astro";
+import TestimonialList from "../components/TestimonialList.astro";
+---
+
+<Layout title="testimonials solution">
+	<main>
+		<div class="container">
+			<TestimonialList items={items} />
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		width: 1110px;
+		max-width: calc(100% - 2rem);
+		color: var(--c-primary-very-dark-grayish-blue);
+		font-size: 15px;
+		line-height: 1.6;
+		min-height: 100vh;
+		min-height: 100dvh;
+	}
+
+	.container {
+		padding-block: 20% 20%;
+	}
+	
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+</style>
