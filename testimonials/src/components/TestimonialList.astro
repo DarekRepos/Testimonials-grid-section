@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content";
+import TestimonialItem from "./TestimonialItem.astro";
+
+type Props = {
+    items: CollectionEntry<"items">[];
+};
+
+const { items } = Astro.props;
+---
+
+<section class="testimonials__container">
+    {items.map((item) => <TestimonialItem item={item} />)}
+</section>
+
+<style lang="scss">
+    @use "../styles/utils" as u;
+    @use "../styles/mixin" as r;
+    .testimonials {
+        &__container {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(u.rem(310), u.rem(350))
+            );
+            @include r.media-up("sm") {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(5, 1fr);
+            }
+            @include r.media-up("lg") {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+            gap: 2rem;
+        }
+    }
+</style>
