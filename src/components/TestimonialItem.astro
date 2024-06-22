@@ -3,13 +3,13 @@ import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 
 type Props = {
-    item: CollectionEntry<"items">;
+    item: CollectionEntry<"testimonials">;
 };
 
 const { item } = Astro.props;
 ---
 
-<div class="testimonials__card">
+<figure class="testimonials__card">
     <div class="testimonials__card__container">
         <div class="testimonials__card__image">
             <Image
@@ -31,16 +31,12 @@ const { item } = Astro.props;
             </div>
         </div>
     </div>
-        {
-            item.data.id === 1 && (
-                <div class="testimonials__card__icon">
-                    
-                </div>
-            )
-        }
-    <div class="testimonials__card__opinion">{item.data.opinion}</div>
-    <div class="testimonials__card__citation">{item.data.citation}</div>
-</div>
+    {item.data.id === 1 && (
+        <div class="testimonials__card__icon" aria-hidden="true"></div>
+    )}
+    <blockquote class="testimonials__card__opinion">{item.data.opinion}</blockquote>
+    <figcaption class="testimonials__card__citation">{item.data.citation}</figcaption>
+</figure>
 
 <style lang="scss">
     @use "../styles/utils" as u;
@@ -56,20 +52,17 @@ const { item } = Astro.props;
         border-radius: 0.5rem;
         position: relative;
 
-        &__icon::before{
-            display: block;
+        &__icon {
             position: absolute;
-            top:0;
-            right:10%;
+            top: 0;
+            right: 10%;
             width: u.rem(104);
             height: u.rem(100);
-            content: "";
             background-image: url("/icons/bg-pattern-quotation.svg");
             background-size: contain;
-            background-color: unset;
             background-repeat: no-repeat;
             opacity: 0.5;
-
+            z-index: 1;
         }
 
         &:first-child {
@@ -134,7 +127,7 @@ const { item } = Astro.props;
             font-size: u.rem(12);
 
             &__author {
-                // Styles for the author element within the card
+                font-weight: bold;
             }
 
             &__graduatetype {
@@ -147,12 +140,36 @@ const { item } = Astro.props;
             font-weight: 600;
             font-size: 20px;
             padding-block-end: u.rem(20);
-            z-index: 10;
+            z-index: 1;
         }
 
         &__citation {
             opacity: 0.8;
             font-size: 12px;
+        }
+    }
+
+    .testimonials__card__container {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        line-height: 1.4;
+        padding-block-end: u.rem(20);
+    }
+
+    .testimonials__card__person {
+        padding-inline-start: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: u.rem(12);
+
+        &__author {
+            font-weight: bold;
+        }
+
+        &__graduatetype {
+            opacity: 0.5;
         }
     }
 </style>
